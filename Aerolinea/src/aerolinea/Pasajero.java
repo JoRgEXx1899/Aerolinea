@@ -10,5 +10,28 @@ package aerolinea;
  * @author estudiantes
  */
 public class Pasajero {
-    
+
+    String nombre, cedula;
+
+    public Pasajero(String nombre, String cedula) {
+        setNombre(nombre);
+        setCedula(cedula);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
 }

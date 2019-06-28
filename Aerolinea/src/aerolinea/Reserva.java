@@ -10,5 +10,19 @@ package aerolinea;
  * @author estudiantes
  */
 public class Reserva {
+    String codigoReserva;
+    Pasajero pasajero;
     
+    public Reserva(String cod,Pasajero pasajero){
+        setCodigoReserva(cod);
+        this.pasajero=pasajero;
+    }
+
+    public String getCodigoReserva() {
+        return codigoReserva;
+    }
+
+    public void setCodigoReserva(String codigoReserva) {
+        this.codigoReserva = codigoReserva;
+    }
 }
