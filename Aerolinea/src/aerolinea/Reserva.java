@@ -10,12 +10,13 @@ package aerolinea;
  * @author estudiantes
  */
 public class Reserva {
-    String codigoReserva;
+    private String codigoReserva;
     Pasajero pasajero;
     
-    public Reserva(String cod,Pasajero pasajero){
+    public Reserva(String cod,String nombreP, String cedulaP ){
         setCodigoReserva(cod);
-        this.pasajero=pasajero;
+        this.pasajero.setNombre(nombreP);
+        this.pasajero.setCedula(cedulaP);
     }
 
     public String getCodigoReserva() {
@@ -24,5 +25,14 @@ public class Reserva {
 
     public void setCodigoReserva(String codigoReserva) {
         this.codigoReserva = codigoReserva;
+    }    
+    
+    public String getNombre() {
+        return pasajero.getNombre();
+    }
+    
+    
+    public String getCedula() {
+        return pasajero.getCedula();
     }
 }

@@ -8,19 +8,28 @@ package aerolinea;
 public class Asiento {
     String fila;
     int numero;
-    boolean estado=true;
+    Reserva reserva;
 
-    public boolean isEstado() {
-        return estado;
+    public Asiento(String fila, int numero) {
+        this.fila = fila;
+        this.numero = numero;
+        this.reserva = null;
+    }    
+
+    public boolean isReservada() {
+        return reserva!=null;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setReserva(Reserva reserva) {
+        this.reserva=reserva;
     }
 
-    public String getAsiento() {
-        return fila+numero;
+    public Reserva getReserva() {
+        return reserva;
     }
     
+    public String getAsiento() {
+        return fila+numero;
+    }    
     
 }

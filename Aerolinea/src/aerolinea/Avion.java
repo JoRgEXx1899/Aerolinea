@@ -1,18 +1,21 @@
 package aerolinea;
 
+import java.text.ParseException;
+
 /**
  *
  * @author JORGE GOMEZ
  */
 public class Avion {
     String ID;
-    Asiento [][] sillas=new Asiento[15][5];
+    Asiento [][] sillas;
 
-    public Avion() {
+    public Avion() throws ParseException {
         for (int i=0;i<14;i++){
             for (int k=0;k<4;k++){
-                sillas[i][k].fila=FilaNumL(i);
-                sillas[i][k].numero=k+1;
+                /*sillas[i][k].fila=FilaNumL(i);
+                sillas[i][k].numero=k+1;*/
+                sillas[i][k]= new Asiento(FilaNumL(i),k+1);
             }
         }
     }
@@ -90,7 +93,20 @@ public class Avion {
         }
     }
     public boolean getDisponibilidadAsiento(String a,int n){
-        return this.sillas[FilaLNum(a)][n-1].isEstado();
+        return this.sillas[FilaLNum(a)][n-1].isReservada();
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public Asiento[][] getSillas() {
+        return sillas;
+    }
+    
+    public Asiento getSilla( int fila, int col )
+    {
+        return sillas[ fila ][ col ];
     }
     
 }
